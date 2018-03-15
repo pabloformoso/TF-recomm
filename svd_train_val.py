@@ -28,7 +28,7 @@ def make_scalar_summary(name, val):
 
 
 def get_data():
-    df = dataio.read_process("/tmp/movielens/ml-1m/ratings.dat", sep="::")
+    df = dataio.read_process("datasets/ml-20m/ratings.csv", sep=",")
     rows = len(df)
     df = df.iloc[np.random.permutation(rows)].reset_index(drop=True)
     split_index = int(rows * 0.9)
