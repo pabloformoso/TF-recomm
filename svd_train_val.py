@@ -62,7 +62,7 @@ def svd(train, test):
     init_op = tf.global_variables_initializer()
     with tf.Session() as sess:
         sess.run(init_op)
-        summary_writer = tf.summary.FileWriter(logdir="/tmp/svd/log", graph=sess.graph)
+        summary_writer = tf.summary.FileWriter(logdir="log", graph=sess.graph)
         print("{} {} {} {}".format("epoch", "train_error", "val_error", "elapsed_time"))
         errors = deque(maxlen=samples_per_batch)
         start = time.time()
